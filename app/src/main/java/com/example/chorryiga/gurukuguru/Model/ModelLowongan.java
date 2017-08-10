@@ -109,7 +109,7 @@ public class ModelLowongan {
     }
 
     public Float getJarak() {
-        return jarak/1000;
+        return jarak;
     }
 
     public void setJarak(Float jarak) {

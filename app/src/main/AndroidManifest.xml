@@ -12,7 +12,7 @@
         android:name=".Util.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Guruku"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -32,7 +32,7 @@
         </activity>
         <activity
             android:name=".Menu_Registrasi.AwalInstall"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Home"
             android:theme="@style/AppTheme.NoActionBar" />

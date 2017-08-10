@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.chorryiga.gurukuguru">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".Util.AppController"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCX2xHYcZq0SGsRWOz-7jvoLBNB4VuCeow" />
+
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/AppTheme"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Menu_Registrasi.AwalInstall"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".Home"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Menu_Pengaturan.EditGuru"
+            android:label="Edit Data Guru" />
+        <activity
+            android:name=".Menu_Profil.TambahKeahlian"
+            android:label="Tambah Keahlian"
+            android:theme="@style/Dialog" />
+        <activity
+            android:name=".Menu_Profil.TambahJadwal"
+            android:label="Tambah Jadwal"
+            android:theme="@style/Dialog" />
+        <activity
+            android:name=".Menu_Profil.LihatKeahlian"
+            android:label="Keahlian Guru"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".Menu_Profil.LihatJadwal"
+            android:label="Jadwal Guru"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".Menu_Profil.EditKeahlian"
+            android:label="Atur Keahlian"
+            android:theme="@style/Dialog.ActionBar" />
+        <activity android:name=".Menu_Registrasi.Registrasi" />
+        <activity
+            android:name=".Menu_Pengaturan.MapsActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".Menu_Profil.EditJadwal"
+            android:label="Atur Jadwal"
+            android:theme="@style/Dialog.ActionBar" />
+        <activity
+            android:name=".Menu_Beranda.ProfilPengguna"
+            android:theme="@style/Dialog" />
+        <activity
+            android:name=".Menu_Profil.LihatLowongan"
+            android:label="Daftar Lowongan Diambil"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".Menu_Profil.LihatBooking"
+            android:label="Daftar Pesanan"
+            android:theme="@style/AppTheme"/>
+    </application>
+
+</manifest>

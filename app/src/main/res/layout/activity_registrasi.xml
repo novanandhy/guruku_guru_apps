@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="30dp"
+    tools:context="com.example.chorryiga.gurukuguru.Menu_Registrasi.Registrasi">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="10pt"
+        android:paddingTop="15dp"
+        android:text="Registrasi Guru"
+        android:textColor="@color/colorPrimary"/>
+
+    <!--Isi Data Email-->
+    <EditText
+        android:id="@+id/alamat_email_reg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        />
+
+    <!--Isi Password-->
+    <EditText
+        android:id="@+id/password_reg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint="Kata Sandi"
+        android:maxLines="1"/>
+
+    <!--Nama Guru-->
+    <EditText
+        android:id="@+id/nama_guru_reg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Nama Lengkap"/>
+
+    <Button
+        android:id="@+id/registrasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:layout_gravity="center"
+        android:text="Registrasi" />
+
+</LinearLayout>

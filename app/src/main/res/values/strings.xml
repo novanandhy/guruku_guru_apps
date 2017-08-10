@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">GURUKU</string>
+    <!-- String untuk kategori -->
+    <string-array name="kategori_guru">
+        <item>Pilih jenjang pendidikan</item>
+        <item>D1</item>
+        <item>D2</item>
+        <item>D3</item>
+        <item>S1</item>
+        <item>S2</item>
+        <item>S3</item>
+    </string-array>
+
+    <string-array name="jenjang_murid">
+        <item>Pilih jenjang murid</item>
+        <item>Semua jenjang</item>
+        <item>TK</item>
+        <item>SD</item>
+        <item>SMP</item>
+        <item>SMA</item>
+    </string-array>
+
+    <string-array name="hari">
+        <item>Pilih hari</item>
+        <item>Setiap hari hari</item>
+        <item>Senin</item>
+        <item>Selasa</item>
+        <item>Rabu</item>
+        <item>Kamis</item>
+        <item>Jumat</item>
+        <item>Sabtu</item>
+        <item>Minggu</item>
+    </string-array>
+
+    <string-array name="matpel_murid">
+        <item>Pilih mata pelajaran</item>
+        <item>Semua mata pelajaran</item>
+        <item>Bahasa Indonesia</item>
+        <item>Bahasa Inggris</item>
+        <item>Matematika</item>
+        <item>IPA(Umum)</item>
+        <item>IPA Fisika</item>
+        <item>IPA Kimia</item>
+        <item>IPA Biologi</item>
+        <item>IPS(Umum)</item>
+        <item>IPS Geografi</item>
+        <item>IPS Sejarah</item>
+        <item>IPS Sosiologi</item>
+    </string-array>
+
+</resources>

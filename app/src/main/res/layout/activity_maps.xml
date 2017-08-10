@@ -1,0 +1,42 @@
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        map:cameraTargetLat="-7.257983"
+        map:cameraTargetLng="112.751741"
+        map:cameraZoom="13"
+        tools:context="com.example.chorryiga.bismilllahtugasakhirguru.MapsActivity" />
+
+    <ImageView
+        android:id="@+id/iamge_myLocation"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_person_pin_circle"
+        android:layout_centerInParent="true"/>
+
+    <at.markushi.ui.CircleButton
+        android:id="@+id/button_myLocation"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        app:cb_color="#ffff"
+        android:src="@drawable/ic_my_location"/>
+    <Button
+        android:id="@+id/button_setLocation"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:text="Set Location"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>

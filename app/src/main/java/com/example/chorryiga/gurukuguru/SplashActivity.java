@@ -6,13 +6,11 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Space;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -118,15 +116,15 @@ public class SplashActivity extends AppCompatActivity {
 
     public void GetAllData(String ID_GURU) {
         GetDataGuru(ID_GURU);
-//        GetRating(ID_GURU);
-//        GetRatingReview(ID_GURU);
-//        GetSkill(ID_GURU);
-//        GetJadwal(ID_GURU);
-//        GetBooking(ID_GURU);
-//        GetTransaksi(ID_GURU);
+        GetRating(ID_GURU);
+        GetRatingReview(ID_GURU);
+        GetSkill(ID_GURU);
+        GetJadwal(ID_GURU);
+        GetBooking(ID_GURU);
+        GetTransaksi(ID_GURU);
     }
 
-    private static void GetDataGuru(final String id_guru) {
+    private void GetDataGuru(final String id_guru) {
         // Tag used to cancel the request
         String tag_string_req = "req_register";
         
@@ -172,7 +170,7 @@ public class SplashActivity extends AppCompatActivity {
                             mGuru.add(mGu);
 
                             //mengambil lowongan berdasarkan lokasi
-                            GetAllLowongan(details.getString("lat"),details.getString("lng"),id_guru);
+                            GetAllLowongan(details.getString("lat"),details.getString("lng"));
 
 
                     } else {
@@ -213,7 +211,7 @@ public class SplashActivity extends AppCompatActivity {
         
     }
 
-    private static void GetAllLowongan(final String latitude, final String longitude, final String id_guru) {
+    private void GetAllLowongan(final String latitude, final String longitude) {
         // Tag used to cancel the request
         String tag_string_req = "req_register";
         
@@ -253,15 +251,18 @@ public class SplashActivity extends AppCompatActivity {
                             mLowongan.add(mLo);
 
                         }
-                        GetRating(ID_GURU);
+
+                        Intent intent = new Intent(SplashActivity.this,Home.class);
+                        startActivity(intent);
 
 
                     } else {
 
                         // Error occurred in registration. Get the error
                         // message
+                        mLowongan = new ArrayList<>();
                         String errorMsg = jObj.getString("error_msg");
-                        Toast.makeText(context, "terjadi kesalahan", Toast.LENGTH_SHORT).show();
+                        Log.d(TAG, "errorMsg: "+errorMsg);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -325,7 +326,6 @@ public class SplashActivity extends AppCompatActivity {
 
                             mRating.add(mRat);
                         }
-                        GetRatingReview(ID_GURU);
 
 
                     } else {
@@ -401,7 +401,7 @@ public class SplashActivity extends AppCompatActivity {
                             }
                         }
                         else mRatingReview = new ArrayList<>();
-                        GetSkill(ID_GURU);
+
 
 
                     } else {
@@ -409,7 +409,8 @@ public class SplashActivity extends AppCompatActivity {
                         // Error occurred in registration. Get the error
                         // message
                         String errorMsg = jObj.getString("error_msg");
-                        
+                        Log.d(TAG, "errorMsg: "+errorMsg);
+                        mRatingReview = new ArrayList<>();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -477,7 +478,6 @@ public class SplashActivity extends AppCompatActivity {
 
                             mSkill.add(mSki);
                         }
-                        GetJadwal(ID_GURU);
 
 
                     } else {
@@ -485,7 +485,8 @@ public class SplashActivity extends AppCompatActivity {
                         // Error occurred in registration. Get the error
                         // message
                         String errorMsg = jObj.getString("error_msg");
-                        
+                        Log.d(TAG, "error Msg: "+errorMsg);
+                        mSkill = new ArrayList<>();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -552,14 +553,14 @@ public class SplashActivity extends AppCompatActivity {
 
                             mJadwal.add(mJa);
                         }
-                        GetBooking(ID_GURU);
 
                     } else {
 
                         // Error occurred in registration. Get the error
                         // message
                         String errorMsg = jObj.getString("error_msg");
-                        
+                        Log.d(TAG, "error msg: "+errorMsg);
+                        mJadwal = new ArrayList<>();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -612,37 +613,33 @@ public class SplashActivity extends AppCompatActivity {
                         JSONArray list = jObj.getJSONArray("user");
                         mBooking.clear();
 
-                        if(list!=null && list.length()>0) {
-                            for (int i = 0; i < list.length(); i++) {
-                                JSONObject details = list.getJSONObject(i);
+                        for (int i = 0; i < list.length(); i++) {
+                            JSONObject details = list.getJSONObject(i);
 
-                                ModelBooking mBo = new ModelBooking();
+                            ModelBooking mBo = new ModelBooking();
 
-                                mBo.setId(details.getInt("id"));
-                                mBo.setId_user(details.getString("id_user"));
-                                mBo.setId_guru(details.getString("id_guru"));
-                                mBo.setStatus(details.getString("status"));
-//                                mBo.setKeterangan(details.getString("keterangan"));
-                                mBo.setNama(details.getString("nama"));
-                                mBo.setFoto(details.getString("foto"));
-                                mBo.setAlamat(details.getString("alamat"));
-                                mBo.setNo_telp(details.getString("no_telp"));
-                                mBo.setEmail(details.getString("email"));
-                                mBo.setLat(details.getString("lat"));
-                                mBo.setLng(details.getString("lng"));
+                            mBo.setId(details.getInt("id"));
+                            mBo.setId_user(details.getString("id_user"));
+                            mBo.setId_guru(details.getString("id_guru"));
+                            mBo.setStatus(details.getString("status"));
+                            mBo.setNama(details.getString("nama"));
+                            mBo.setFoto(details.getString("foto"));
+                            mBo.setAlamat(details.getString("alamat"));
+                            mBo.setNo_telp(details.getString("no_telp"));
+                            mBo.setEmail(details.getString("email"));
+                            mBo.setLat(details.getString("lat"));
+                            mBo.setLng(details.getString("lng"));
 
-                                mBooking.add(mBo);
-                            }
+                            mBooking.add(mBo);
                         }
-                        else mBooking = new ArrayList<>();
-                        GetTransaksi(ID_GURU,false);
 
                     } else {
 
                         // Error occurred in registration. Get the error
                         // message
                         String errorMsg = jObj.getString("error_msg");
-                        Toast.makeText(context,"sdfsdf",Toast.LENGTH_SHORT).show();
+                        Log.d(TAG, "error msg: "+errorMsg);
+                        mBooking = new ArrayList<>();
                         
                     }
                 } catch (JSONException e) {
@@ -678,10 +675,9 @@ public class SplashActivity extends AppCompatActivity {
         
     }
 
-    public static void GetTransaksi(final String id_guru, final boolean flag_source) {
+    public static void GetTransaksi(final String id_guru) {
         // Tag used to cancel the request
         String tag_string_req = "req_register";
-        Toast.makeText(context,"fdsf",Toast.LENGTH_SHORT).show();
 
         StringRequest strReq = new StringRequest(Request.Method.POST,
                 Server.TRANSAKSI_LOWONGAN_GET, new Response.Listener<String>() {
@@ -724,11 +720,6 @@ public class SplashActivity extends AppCompatActivity {
                         else {
                             mTransaksi = new ArrayList<>();
 
-                        }
-                        if(!flag_source) {
-                            Intent intent = new Intent(context, Home.class);
-                            context.startActivity(intent);
-                            act.finish();
                         }
 
                     } else {

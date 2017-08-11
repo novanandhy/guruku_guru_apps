@@ -20,15 +20,6 @@
         android:layout_margin="10dp"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/ket"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Data Jadwal Ajar"
-            android:textColor="@color/colorPrimary"
-            android:textSize="8pt"
-            android:textStyle="bold" />
-
         <android.support.v7.widget.RecyclerView
             android:id="@+id/list_jadwal"
             android:layout_width="match_parent"

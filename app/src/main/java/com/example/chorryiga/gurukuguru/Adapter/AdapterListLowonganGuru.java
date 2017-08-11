@@ -3,7 +3,6 @@ package com.example.chorryiga.gurukuguru.Adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -136,10 +135,8 @@ public class AdapterListLowonganGuru extends RecyclerView.Adapter<AdapterListLow
                     JSONObject jObj = new JSONObject(response);
                     boolean error = jObj.getBoolean("error");
                     if (!error) {
-                        splashActivity.GetTransaksi(sessionManager.getKeyId(),true);
+                        splashActivity.GetTransaksi(sessionManager.getKeyId());
                         Toast.makeText(context, "Lowongan diambil", Toast.LENGTH_SHORT).show();
-                        rvData.remove(position);
-                        notifyDataSetChanged();
                     } else {
 
                         // Error occurred in registration. Get the error

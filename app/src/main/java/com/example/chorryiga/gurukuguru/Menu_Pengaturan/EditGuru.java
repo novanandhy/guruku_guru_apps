@@ -271,7 +271,7 @@ public class EditGuru extends AppCompatActivity {
                     if (null != selectedImageUri) {
                         img = MediaStore.Images.Media.getBitmap(getContentResolver(),selectedImageUri);
                         image.setImageBitmap(img);
-                        img = scaleDownBitmap(img,70,context);
+                        img = scaleDownBitmap(img,90,context);
                     }
                 }
             }else {

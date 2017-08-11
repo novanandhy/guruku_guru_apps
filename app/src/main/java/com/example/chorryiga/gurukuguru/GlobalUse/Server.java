@@ -6,7 +6,7 @@ package com.example.chorryiga.gurukuguru.GlobalUse;
 
 public class Server {
 
-    public static String URL = "http://192.168.1.5/";
+    public static String URL = "http://websitegratis.esy.es/";
     public static String URLpath = URL+"guruku_api/";
 
     //untuk mendaftarkan segala pengguna [user+guru]
